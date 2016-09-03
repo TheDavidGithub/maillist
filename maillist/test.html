@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  </head>
+  <body>
+    <div id="chat" style="margin-left: 100px;margin-top: 50px;">
+      <form type="hidden">
+        {% csrf_token %}
+        <input type="hidden" name="user_id" value="1"/>
+      </form>
+      <p>info_id: <input type="text" id="info_id"> name: <input type="text" id="name"> phone: <input type="text" id="phone"></p>
+      <p><button type="button" id="add">Add</button><button type="button" id="delete">Delete</button><button type="button" id="change">Change</button></p>
+      <p><table id="table" border="1" cellpadding="5" style="border-collapse: collapse;"></table></p>
+    </div>
+  </body>
+  {% load staticfiles %}
+  <script type="text/javascript" src='{% static "jquery-1.12.1.min.js" %}'></script>
+  <script type="text/javascript" src='{% static "reconnecting-websocket.min.js" %}'></script>
+  <script type="text/javascript" src='{% static "show_data.js" %}'></script>
+</html>
